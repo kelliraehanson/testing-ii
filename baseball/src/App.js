@@ -14,7 +14,10 @@ class App extends Component {
   addStrike = () => {
     let strikes = this.state.strikes + 1;
     if (strikes > 2) {
-      this.out();
+      this.setState({
+        balls: 0,
+        strikes: 0
+      })
     } else {
       this.setState({
         strikes: strikes
@@ -26,7 +29,10 @@ class App extends Component {
   addBall = () => {
     let balls = this.state.balls + 1;
     if (balls > 3) {
-      this.out();
+      this.setState({
+        balls: 0,
+        strikes: 0
+      })
     } else {
       this.setState({
         balls: balls
@@ -35,9 +41,12 @@ class App extends Component {
   };
 
   Foul = () => {
-    this.setState({
-      fouls: this.state.fouls + 1
-    })
+    if (this.state.strikes < 2 ) {
+      this.setState({
+        strikes: this.state.strikes + 1
+      })
+    }
+    
   };
 
   Hit = () => {

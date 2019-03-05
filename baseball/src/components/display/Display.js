@@ -1,21 +1,17 @@
 import React from 'react';
 
-class Dashboard extends React.Component {
+const Dashboard = props => {
 
-    render() {
         return (
             <>
                 <div className="display">
                 <h1>Baseball!</h1>
-                    <div>Strikes: {`${this.props.strikes}`}</div>
-                    <div>Balls: {`${this.props.balls}`}</div>
-                    {/* <div>Hits: {`${this.props.hits}`}</div>
-                    <div>Fouls: {`${this.props.fouls}`}</div> */}
+                    <h3 data-testid="strikes">Strikes: {props.strikes}</h3>
+                    <h3 data-testid="balls">Balls: {props.balls}</h3>
                 </div>
 
             </>
         );
-    }
 
 }
 

@@ -4,16 +4,16 @@ import 'jest-dom/extend-expect';
 
 import Display from './Display';
 
-discribe('<Display />', () => {
+describe('<Display />', () => {
     it('displays strikes', () => {
         const { getByText } = render(<Display />);
 
-        expect(getByTest(/strikes/i)).toBeInTheDocument();
+        expect(getByText(/strikes/i)).toBeInTheDocument();
     });
 
     it('displays balls', () => {
         const { getByText } = render(<Display />);
 
-        expect(getByTest(/balls/i)).toBeInTheDocument();
+        expect(getByText(/balls/i)).toBeInTheDocument();
     });
 });
